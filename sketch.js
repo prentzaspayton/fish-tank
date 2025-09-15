@@ -7,12 +7,16 @@ let seaweed = [];
 
 // Draw seaweed
 function drawSeaweed(x, y, h) {
-  noStroke();
-  fill(0, 150, 50);
-  // gentle sway for mobile-friendly motion (slow)
-  const sway = 8 * sin(frameCount * 0.01 + x * 0.02);
-  bezier(x, y, x-10+sway, y-h/3, x+10-sway, y-(2*h/3), x, y-h);
-  ellipse(x, y-h, 20, 40);
+  stroke(24, 120, 56);   // dark green outline
+  strokeWeight(15);      // thickness
+  noFill();
+  
+  fill(0, 150, 50);      // leaf fill
+  // wavy seaweed shape
+  bezier(x, y, 
+         x - 10, y - h/3, 
+         x + 10, y - (2*h/3), 
+         x, y - h);
 }
 
 // Draw one fish
