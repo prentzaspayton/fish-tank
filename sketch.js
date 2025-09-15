@@ -115,8 +115,8 @@ function draw() {
     f.x += f.speed;
     if (f.x > width + f.length/2) f.x = -f.length/2;
 
-    f.wiggleOffset += 0.1;
-    const wiggleAmount = 12 * sin(f.wiggleOffset);
+    f.wiggleOffset += 0.07;
+    const wiggleAmount = 10 * sin(f.wiggleOffset);
     const newY = f.baseY + wiggleAmount;
 
     drawfish(f.x, newY, f.length, f.height, f.color);
